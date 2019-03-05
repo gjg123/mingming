@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.item{
+				margin:20px 20px;
+			}
+			.list{
+				padding-left:20px;
+			}
+			.box{
+				padding: 20px;
+				padding-left: 70px;
+				box-sizing: border-box;
+			}
+			.line{
+				display: inline-block;
+				width:50px;
+			}
+		</style>
+	</head>
+	<body class="box">
+		
+		<h3>技术选型</h3>
+		<div class="item">
+			1.首先考虑项目日后会变得非常复杂，功能会非常多。所以需要精心设计项目架构和开发流程，
+			保证项目后期复杂度越来越高的时候，代码可维护性依然保持最初的状态
+		</div>
+		
+		
+		<div class="item">		
+			2.后台项目需要频繁的发送请求，操作dom，以及维护各种状态，
+			所以需要先为项目选择一款合适的mvvm框架，综合考虑最后项目框架选择使用 Vue.
+			<div class="">
+				原因是：
+				上手简单，团队新人可以很容易就参与到这个项目中进行开发，所以最终选择了Vue	
+			</div>
+		</div>
+		<h3>选择vue周边依赖（全家桶）</h3>
+		<div class="item">
+			框架定了Vue 后，接下来需要挑选一些vue套餐来帮助开发，套餐有：
+			<div class="">
+				<p>1:vuex – 项目复杂后，使用vuex来管理状态必不可少</p>
+				<p>2:element-ui – 基于vue2.0 的组件库，饿了么的这套组件库还挺好用的，功能也全</p>
+				<p>3:vue-router – 单页应用必不可少需要使用前端路由（这种管理系统非常适合单页应用，系统经常需要频繁的切换页面，使用单页应用可以很快速的切换页面而且数据也是按需加载，不会重复加载依赖）</p>
+				<p>4:axios – vue 官方推荐的http客户端</p>
+				<p>5:vue-cli 的 webpack 模板，这套模板是功能最全的，有hot reload，linting，testing，css extraction 等功能</p>
+			</div>
+		</div>
+		<h3>架构设计,整体架构图</h3>
+		<h3>目录结构</h3>
+		<p>├──node_modules项目依赖模块</p>
+		<p>├──build 					构建脚本目录</p>
+				<p><span class="line"></span>|— build.js				生产环境构建（编译打包）脚本</p>
+				<p><span class="line"></span>|— check-versions.js	版本验证工具</p>
+				<p><span class="line"></span>|— utils.js				构建相关工具方法（主要用来处理css类文件的loader）</p>
+				<p><span class="line"></span>|— vue-loader.conf.js		处理vue中的样式</p>
+				<p><span class="line"></span>|— webpack.base.conf.js		webpack基础配置</p>
+				<p><span class="line"></span>|— webpack.dev.conf.js		webpack开发环境配置</p>
+				<p><span class="line"></span>|— webapck.prod.conf.js		webpack生产环境配置</p>
+
+		<p>├──config						项目配置</p>
+				<p><span class="line"></span>|— dev.env.js			开发环境变量</p>
+				<p><span class="line"></span>|— index.js				主配置文件</p>
+				<p><span class="line"></span>|— prod.env.js			生产环境变量</p>
+				<p><span class="line"></span>|— test.env.js			测试环境变量</p>		
+	    <p>├──mock							mock数据目录，用于本地数据模拟</p>
+	    <p>├──src  						项目源码目录</p>
+			    <p><span class="line"></span>|—components  			公共组件目录</p>
+				<p><span class="line"></span>|—api # 接入后端服务的基础 API</p>
+				<p><span class="line"></span>|—assets 				静态文件,资源目录，资源会被webpack构建</p>
+				  	<p><span class="line"></span><span class="line"></span>|— js				公共js文件目录	</p>
+				    <p><span class="line"></span><span class="line"></span>|— css				公共样式文件目录</p>
+				    <p><span class="line"></span><span class="line"></span>|— images			图片存放目录</p>		
+				<p><span class="line"></span>├── store				应用级数据管理</p>
+					<p><span class="line"></span><span class="line"></span>|— store.js			组装模块并导出，统一管理导出，也可命名为store.js</p>
+					<p><span class="line"></span><span class="line"></span>|— state.js			单一状态树，定义应用数据结构及初始化状态</p>
+					<p><span class="line"></span><span class="line"></span>|— getters.js			获取state中的状态，仅单向获取数据，不做任何修改</p>
+					<p><span class="line"></span><span class="line"></span>|— actions.js			调用mutation方法对数据进行操作</p>	
+					<p><span class="line"></span><span class="line"></span>|— mutation-types.js	存放vuex常用的变量</p>
+					<p><span class="line"></span><span class="line"></span>|— mutations.js			定义state数据的修改操作</p>
+
+ 				<p><span class="line"></span>├── App.vue # App Root Component</p>
+		        <p><span class="line"></span>├── main.js # Vue 入口文件</p>
+		        <p><span class="line"></span>├── tools					自己封装的一些工具</p>
+		        <p><span class="line"></span>├── router # 				路由</p>
+		        <p><span class="line"></span>└── view # 					前端页面文件</p>
+		<p>├──static					纯静态资源，不会被webpack构建，eg:没有npm包模块</p>
+		<p>├──test						测试</p>
+			<p><span class="line"></span>|— unit					单元测试</p>
+			<p><span class="line"></span>|— e2e					e2e测试</p>
+		<p>├──.babelrc					babel的配置文件</p>
+		<p>├──.editorconfig			编辑器的配置文件</p>
+		<p>├── .gitignore				git的忽略配置文件</p>
+		<p>├── .postcssrc.js			postcss的配置文件</p>
+		<p>├── index.html				html模板，入口页面</p>
+		<p>├──package.json				npm包配置文件，依赖包信息</p>
+		<p>├──README.md				项目介绍</p>
+
+
+
+
+
+
+		
+		
+	</body>
+</html>

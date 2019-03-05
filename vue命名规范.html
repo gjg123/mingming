@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,html{
+				width:100%;
+				height:100%;
+				overflow: hidden;
+			}
+			.box{
+				padding: 40px;
+				width:100%;
+				height:100%;
+				box-sizing: border-box;
+				overflow: auto;
+				
+			}
+			p{
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--views 下的文件夹命名
+		1.views 下面的文件夹代表着模块的名字
+		2.由名词组成
+		3.尽量是名词
+		4.以小写开头
+		5.单词只能有一个
+		views 下的 vue 文件命名
+		1.views 下面的 vue 文件代表着页面的名字
+		2.放在模块文件夹之下
+		3.尽量是名词
+		4.大写开头，开头的单词就是所属模块名字（CarDetail、CarEdit、CarList）
+		5.名字至少两个单词（good: CarDetail）（bad: Car）
+		6.常用结尾单词有（Detail、Edit、List、Info、Report）
+		7.以 Item 结尾的代表着组件（CarListItem、CarInfoItem）-->
+		
+		
+		
+		
+		
+		
+		
+		
+	<div class="box">
+		<h2>团队开发前端VUE项目代码规范目的</h2>
+			<p>
+				统一编码风格，命名规范，注释要求，在团队协作中输出可读性强，易维护，风格一致的代码		    
+				团队开发前端VUE项目代码规范
+			</p>	
+		<h2>团队开发前端VUE项目代码规范</h2>
+			<p>1.基于组件化开发理解</p>
+			<p>2.组件命名规范</p>
+			<p>3.结构化规范</p>
+			<p>4.注释规范</p>
+			<p>5.编码规范</p>	
+		<h2>基于组件化开发理解</h2>	
+		<h4>什么是组件？</h4>	
+		   <p>1. &nbsp; 组件其实就是页面组成的一部分，好比是电脑中的每一个元件（如硬盘、键盘、鼠标），它是一个具有独立的逻辑和功能或界面，同时又能根据规定的接口规则进行相互融化，变成一个完整的应用。</p>
+	       <p>2.&nbsp; 页面只不过是这样组件的容器，组件自由组合形成功能完整的界面，当不需要某个组件，或者想要替换某个组件时，可以随时进行替换和删除，而不影响整个应用的运行。前端组件化的核心思想就是将一个巨大复杂的东西拆分成粒度合理的小东西。</p>   
+		<h4>组件化开发的好处</h4>		
+		   <p>提高开发效率</p>
+		   <p>方便重复使用</p>
+		   <p>简化调试步骤</p>
+		   <p>提升整个项目的可维护性</p>
+		   <p>便于协同开发</p>
+		   <p>使其高内聚，低耦合，达到分治与复用的目的。</p>
+		<h4>Vue组件化开发</h4>
+			<p>单文件系统，样式局部作用域</p>  
+			<p>基本组成结构：template script style</p>
+  			<p> 组件注册方式：1）公共组件全局注册 2）其余组件局部注册</p>
+
+	<h2>组件命名规范</h2>
+			<p>
+				<h4>1.文件夹命名</h4>
+				<p>a.主要以功能模块代表命名,代表着模块的名字.</p>
+				<p>b.尽量是名词,单词尽量是一个,或大驼峰命名</p>
+				<p>c.以大写开头.</p>		
+				<p>常用结尾单词有（Detail、Edit、List、Info、Report）</p>
+			</p>
+			<p>
+				<h4>2.文件夹下的 .vue 文件命名</h4>
+				<p>a.尽量是名词,大写开头或大驼峰命名.</p>
+				<p>b.常用结尾单词有（Detail、Edit、List、Info、Report）</p>
+			</p>
+			<p>
+				<h4>3.vue文件方法声明顺序</h4>
+				<p>- components</p>   
+        		<p>- props</p>
+			    <p>- data</p>     
+			    <p>- created</p>
+			    <p>- mounted</p>
+			    <p>- activited</p>
+			    <p>- update</p>
+			    <p> - beforeRouteUpdate</p>
+			    <p>- metods</p>   
+			    <p>- filter</p>
+			    <p>- computed</p>
+			    <p>- watch</p>
+			</p>
+			<h2>method 自定义方法命名</h2>
+			<p>1.ajax 方法以 get、post 开头如:（good：getList、postForm）</p>
+			<p>2.事件方法以 on 开头（onTypeChange、onUsernameInput）</p>
+			<p>3.init、refresh 单词除外</p>
+			<p>4.尽量使用常用单词开头（set、get、open、close、jump）</p>
+			<p>5.驼峰命名（good: getListData）（bad: get_list_data、getlistData）</p>
+			
+			<h2>data props 方法注意点</h2>
+			<p>1.使用 data 里的变量时请先在 data 里面初始化</p>
+			<p>2.props 指定类型，也就是 type</p>
+			<p>3.props 改变父组件数据 基础类型用 $emit,复杂类型直接改</p>
+			<p>4.ajax 请求数据用上 isLoading、isError 变量</p>
+			<p>5.不命名多余数据，现在是详情页、你的数据是 ajax 请求的，那就直接声明一个对象叫 d，而不是每个字段都声明</p>
+			
+			<p>6.表单数据请包裹一层 form</p>
+			
+		<h2>生命周期方法注意点</h2>
+			<p>不在 mounted、created 之类的方法写逻辑，取 ajax 数据，</p>
+			<p>在 created 里面监听 Bus 事件</p>
+		<h2>注释规范</h2>
+		<p>a)	每个方法的顶部加上注释</p>
+		<p>b)	Html中每个功能区的开头和结束都写上注释</p>
+		<p>c)	每个功能区的css也注明开始和结束</p>
+		<p>d)	每个字段和变量后面加上注释</p>
+		<p>以下情况填写注释：</p>
+		<p>a.	公共组件的使用说明</p>
+		<p>b.	各组件中重要函数或者类说明</p>
+		<p>c.	复杂的业务逻辑处理说明</p>
+		<p>d.	特殊情况的代码处理说明，对于特殊用途的变量、存在临界值、使用了某种算法思路进行注释说明</p>
+		<p>e.	注释块必须以/(两个星号)/</p>
+		<p>f.	单行注释使用 //</p>
+
+		<h2>编码规范</h2>
+			<p>优秀的项目源码，即使是多人开发，看代码也如出一人之手。统一的编码规范，可使代码更易于阅读，易于理解，易于维护。尽量按照ESLint格式要求编写代码</p>
+			
+			<p>1.使用ES6风格编码源码</p>
+	        <p>定义变量使用let ,定义常量使用const</p>
+	        <p>使用export ，import 模块化</p>
+	        <p>2.组件 props </p>
+		        <p>2.1 提供默认值</p>
+		        <p>2.2使用 type 属性校验类型</p>
+		        <p>2.3使用 props 之前先检查该 prop 是否存在</p>
+		    <p>3.避免 this.$parent</p>
+		    <p>4.谨慎使用 this.$refs</p>
+		    <p>5.无需将 this 赋值给 component 变量</p>
+		    <p>6.调试信息console.log() debugger 使用完及时删除</p>
+			<h2>Js中的命名规范</h2>
+			<p>自定义变量名</p>
+			<p>i.	驼峰式，首字母小写命名规范书写</p>
+			<p>ii.	数字类型以n开头，字符串以s开头，布尔类型以b开头，对象以o开头，数组以a开头。Eg:nAge=29、sName=”Jone”</p>
+			<p>自定义常量名</p>
+			<p>i.	常量名采用大写+ _下划线规范书写</p>
+			<p>函数名</p>
+			<p>i.	驼峰式，首字母小写命名规范</p>
+			<p>ii.	以操作类型+操作对象</p>
+			<p>iii.	操作类型如下：</p>
+			<p>新增类(add)、编辑类(edit)、删除类(delete)、查询单个类(get)、查询列表类(search)、打印类(print)、上传类(upload)、下载类(download)、导入类(import)、导出类(export)、检验类(check)、重置类(reset)、同步类(syn)、分页类(page)</p>
+			    
+		<h2>拓展</h2>
+			<p>在vuex中，多个组件或者模块共享的数据，能用local storage的就不要用vuex；</p>
+			<p>引入模块或者组件进行npm安装的时候，请不要漏掉--save，避免漏掉注册进package.json文件中。</p>
+			
+	</div>
+			
+			
+			
+			
+	</body>
+</html>
